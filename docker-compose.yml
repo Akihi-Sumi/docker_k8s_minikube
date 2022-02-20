@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  alpine:
+    container_name: alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    tty: true
+    working_dir: '/work'
+    volumes:
+      - ./vm:/work/
+      - /var/run/docker.sock:/var/run/docker.sock
